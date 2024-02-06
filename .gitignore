@@ -35,6 +35,4 @@ dist/
 # Ignore local configuration files
 config/local.js
 
-# Ignore any file or directory not explicitly specified
-**/*
 !.gitignore
