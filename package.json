@@ -1,0 +1,26 @@
+{
+  "name": "blitzer-event-api",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/truelinked/blitzer-event-api.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/truelinked/blitzer-event-api/issues"
+  },
+  "homepage": "https://github.com/truelinked/blitzer-event-api#readme",
+  "dependencies": {
+    "body-parser": "^1.20.2",
+    "express": "^4.18.2",
+    "jsonwebtoken": "^9.0.2",
+    "mongoose": "^8.1.1",
+    "redis": "^4.6.13"
+  }
+}
