@@ -16,6 +16,4 @@ app.get('/ping', (req, res) => {
     })
 })
 
-
-
 module.exports = app
