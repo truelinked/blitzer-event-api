@@ -1,25 +1,23 @@
+require('dotenv').config({ path: require('path').join(__dirname, '../.env') });
+
 module.exports = {
-    environment: 'development',
+    environment: process.env.NODE_ENV || 'development',
     app: {
         // All app based config will be here
-        port: 3000,
-        secret: 'supersecret'
+        port: process.env.APP_PORT || 3000,
+        secret: process.env.APP_SECRET || 'secret-key'
     },
     db: {
         // Mongo based config will be here
-        host: 'localhost',
-        port: 27017,
-        name: 'test',
-        uri: 'mongodb://localhost:27017/test'
+        uri: process.env.MONGODB_URI || 'mongodb://localhost:27017/test'
     },
     cache: {
         // Redis based config will be here
-        host: 'localhost',
-        port: 6379
+        url: process.env.REDIS_URL || 'redis://localhost:6379'
     },
     worker: {
         // Airflow based config will be here
-        host: 'localhost',
-        port: 3000
+        host: process.env.AIRFLOW_HOST || 'localhost',
+        port: process.env.AIRFLOW_PORT || 3000
     },
 }
