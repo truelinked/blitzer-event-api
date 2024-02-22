@@ -1,6 +1,6 @@
 const axios = require('axios');
 
-const { airflow: { url } } = require('../config');
+const { airflow: { url } } = require('../../config');
 
 const triggerDag = async (dagId, dagPayload) => {
     try {

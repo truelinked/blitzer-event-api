@@ -9,7 +9,12 @@ module.exports = {
     },
     db: {
         // Mongo based config will be here
-        uri: process.env.MONGODB_URI || 'mongodb://localhost:27017/test'
+        uri: process.env.MONGODB_URI || 'mongodb://localhost:27017/test',
+        autoIndex: process.env.MONGODB_AUTOINDEX || true,
+        poolSize: process.env.MONGODB_POOL_SIZE || 10,
+        serverSelectionTimeoutMS: 5000,
+        socketTimeoutMS: 45000,
+        family: 4
     },
     cache: {
         // Redis based config will be here
@@ -20,4 +25,9 @@ module.exports = {
         host: process.env.AIRFLOW_HOST || 'localhost',
         port: process.env.AIRFLOW_PORT || 3000
     },
+    log: {
+        // Log based config will be here
+        level: process.env.LOG_LEVEL || 'error',
+        path: process.env.LOG_PATH || 'error.log'
+    }
 }
