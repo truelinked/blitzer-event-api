@@ -20,10 +20,9 @@ module.exports = {
         // Redis based config will be here
         url: process.env.REDIS_URL || 'redis://localhost:6379'
     },
-    worker: {
+    airflow: {
         // Airflow based config will be here
-        host: process.env.AIRFLOW_HOST || 'localhost',
-        port: process.env.AIRFLOW_PORT || 3000
+        url: process.env.AIRFLOW_URL,
     },
     log: {
         // Log based config will be here

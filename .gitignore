@@ -12,9 +12,6 @@ logs/
 # Ignore npm debug logs
 npm-debug.log*
 
-# Ignore VSCode settings
-.vscode/
-
 # Ignore project-specific files generated during development
 .DS_Store
 *.pid
