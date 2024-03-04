@@ -1,5 +1,7 @@
-const client = require('../../../common/services/redis.service').client;
-const airflow = require('../../../common/services/airflow.service').client;
+// const client = require('../../../common/services/redis.service').client;
+// const airflow = require('../../../common/services/airflow.service').client;
+
+const { Event } = require('../models/event.models')
 
 const { Event } = require('../models/event.models')
 
@@ -20,7 +22,7 @@ exports.insert = async function (req, res) {
         // Send the event to airflow
         // airflow.send(req.body);
     } catch (err) {
-        console.error('Error storing event:', error);
+        console.error('Error storing event:', err);
         res.status(500).json({ error: 'Failed to store event' });
     }
 }

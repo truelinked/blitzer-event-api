@@ -12,7 +12,7 @@ eventSchema.virtual('id').get(function () {
 });
 
 eventSchema.set('toJSON', {
-    virtuals: true
+    virtuals: true 
 });
 
 const Event = mongoose.model('Event', eventSchema);
