@@ -1,14 +1,22 @@
-const mongoose = require('../../../common/mongoose.service').mongoose;
+const mongoose = require('../../../common/services/mongoose.service').mongoose;
 const Schema = mongoose.Schema;
+
+const eventSchema = new Schema({
+    visitorId: String,
+    requestId: String,
+    events: Object
+})
 
 eventSchema.virtual('id').get(function () {
     return this._id.toHexString();
 });
 
 eventSchema.set('toJSON', {
-    virtuals: true
+    virtuals: true 
 });
 
-const eventSchema = new Schema({
-    
-})
+const Event = mongoose.model('Event', eventSchema);
+
+module.exports = {
+    Event
+}

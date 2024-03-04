@@ -10,6 +10,22 @@ const options = {
     socketTimeoutMS, family
 };
 
+class BlitzerDataStoreService {
+    
+}
+
+class MongooseService {
+    static connectWithRetry() {
+        console.log('MongoDB connection with retry')
+        mongoose.connect(uri, options).then(()=>{
+            console.log('MongoDB is connected')
+        }).catch(err=>{
+            console.log('MongoDB connection unsuccessful, retry after 5 seconds. ', ++count);
+            setTimeout(MongooseService.connectWithRetry, 5000)
+        })
+    }
+}
+
 const connectWithRetry = () => {
     console.log('MongoDB connection with retry')
     mongoose.connect(uri, options).then(()=>{

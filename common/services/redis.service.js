@@ -5,6 +5,12 @@ const options = {
     url
 }
 
+class BlitzerCacheService {
+    constructor() {
+        this.client = connect();
+    }
+}
+
 const connect = () => {
     console.log('Redis connection')
     const client = createClient(options);
