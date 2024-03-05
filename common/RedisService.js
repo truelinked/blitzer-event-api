@@ -1,14 +1,8 @@
 const { createClient } = require('redis');
-const { cache: { url } } = require('../../config');
+const { cache: { url } } = require('../config');
 
 const options = {
     url
-}
-
-class BlitzerCacheService {
-    constructor() {
-        this.client = connect();
-    }
 }
 
 const connect = () => {

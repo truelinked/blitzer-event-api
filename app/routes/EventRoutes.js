@@ -1,5 +1,5 @@
-const EventController = require('./controllers/event.controller');
-const VerificationMiddleware = require('../auth/controllers/auth.controller').verifyAuth;
+const EventController = require('../controllers/EventController');
+const VerificationMiddleware = require('../controllers/AuthController').verifyAuth;
 
 exports.routesConfig = function (app) {
     app.post('/events', [

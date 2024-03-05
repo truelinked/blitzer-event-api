@@ -1,4 +1,4 @@
-const AuthController = require('./controllers/auth.controller');
+const AuthController = require('../controllers/AuthController');
 
 exports.routesConfig = function (app) {
     app.post('/auth', [

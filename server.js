@@ -1,7 +1,10 @@
 const app = require('./app')
+const { api } = require('./config')
 
-const port = process.env.APP_PORT || '3000'
-
-app.listen(port, function () {
-    console.log('app listening at port %s', port);
+app.listen(api.port, function (error) {
+    if (error) {
+        console.error('Unable to listen for connections', error);
+        process.exit(10);
+    }
+    console.log(`app listening at port ${api.port}`);
 });

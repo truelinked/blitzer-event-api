@@ -1,9 +1,7 @@
 // const client = require('../../../common/services/redis.service').client;
 // const airflow = require('../../../common/services/airflow.service').client;
 
-const { Event } = require('../models/event.models')
-
-const { Event } = require('../models/event.models')
+const Event = require('../models/EventModels');
 
 exports.insert = async function (req, res) {
     // TODO: This will have the detail event POST request

@@ -2,7 +2,7 @@ require('dotenv').config({ path: require('path').join(__dirname, '../.env') });
 
 module.exports = {
     environment: process.env.NODE_ENV || 'development',
-    app: {
+    api: {
         // All app based config will be here
         port: process.env.APP_PORT || 3000,
         secret: process.env.APP_SECRET || 'secret-key'

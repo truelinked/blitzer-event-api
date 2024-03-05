@@ -1,15 +1,16 @@
 const express = require('express');
 
+const connectDB = require('../common/DatabaseService');
+
 // const Sentry = require('@sentry/node');
 // const Tracing = require("@sentry/tracing");
-
-const authRouter = require('./auth/routes');
-const eventRouter = require('./event/routes');
-
 const app = express();
 
 app.use(express.json());
+app.use(express.urlencoded({ extended: false }));
 
+// Connect to the database
+connectDB();
 // Uncomment and use when sentry is integrated
 // Sentry.init({
 //     dsn: "",
@@ -28,6 +29,12 @@ app.use(express.json());
 // });
 
 // app.use(Sentry.Handlers.errorHandler());
+
+const authRouter = require('./routes/AuthRoutes');
+const eventRouter = require('./routes/EventRoutes');
+
+// app.use('/api/auth', authRouter);
+// app.use('/api/events', eventRouter);
 
 authRouter.routesConfig(app);
 eventRouter.routesConfig(app);
